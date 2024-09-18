@@ -25,8 +25,8 @@ function Projects() {
             <ProjectCard
               imgPath={chatify}
               isBlog={false}
-              title="Chatify"
-              description="Personal Chat Room or Workspace to share resources and hangout with friends build with react.js, Material-UI, and Firebase. Have features which allows user for realtime messaging, image sharing as well as supports reactions on messages."
+              title="Dodger"
+              description="Created my version of Dodger, a game where the player has to avoid falling objects. The player can move using the arrow keys or mouse. A score and top score are kept."
               ghLink="https://github.com/soumyajit4419/Chatify"
               demoLink="https://chatify-49.web.app/"
             />
@@ -36,8 +36,8 @@ function Projects() {
             <ProjectCard
               imgPath={bitsOfCode}
               isBlog={false}
-              title="Bits-0f-C0de"
-              description="My personal blog page build with Next.js and Tailwind Css which takes the content from makdown files and renders it using Next.js. Supports dark mode and easy to write blogs using markdown."
+              title="Bomb Maze"
+              description="In this project I reskinned someone else's code to create my own game.  This game has a start phase, a play phase, and a game over phase. The player must navigate through the maze while dodging the bombs (the bombs are endless). There will be three rooms the player can play in. There is no time limit for the player to clear the room and the rooms loop."
               ghLink="https://github.com/soumyajit4419/Bits-0f-C0de"
               demoLink="https://blogs.soumya-jit.tech/"
             />
@@ -47,7 +47,7 @@ function Projects() {
             <ProjectCard
               imgPath={editor}
               isBlog={false}
-              title="Editor.io"
+              title="AlienMan"
               description="Online code and markdown editor build with react.js. Online Editor which supports html, css, and js code with instant view of website. Online markdown editor for building README file which supports GFM, Custom Html tags with toolbar and instant preview.Both the editor supports auto save of work using Local Storage"
               ghLink="https://github.com/soumyajit4419/Editor.io"
               demoLink="https://editor.soumya-jit.tech/"              
@@ -58,10 +58,10 @@ function Projects() {
             <ProjectCard
               imgPath={leaf}
               isBlog={false}
-              title="Plant AI"
-              description="Used the plant disease dataset from Kaggle and trained a image classifer model using 'PyTorch' framework using CNN and Transfer Learning with 38 classes of various plant leaves. The model was successfully able to detect diseased and healthy leaves of 14 unique plants. I was able to achieve an accuracy of 98% by using Resnet34 pretrained model."
-              ghLink="https://github.com/soumyajit4419/Plant_AI"
-              demoLink="https://plant49-ai.herokuapp.com/"
+              title="Assignment Portfolio Website"
+              description="Created a class projects website using HTML and CSS for a clean and straightforward showcase of academic work. The website features organized sections for different projects, maintaining a responsive design for various screen sizes."
+              // ghLink=""
+              demoLink="https://cpst.tulane.edu/~hbarahona/CPST2400StudentWebsiteStarterFiles/"
             />
           </Col>
 
@@ -69,7 +69,7 @@ function Projects() {
             <ProjectCard
               imgPath={suicide}
               isBlog={false}
-              title="Ai For Social Good"
+              title="Capstone"
               description="Using 'Natural Launguage Processing' for the detection of suicide-related posts and user's suicide ideation in cyberspace  and thus helping in sucide prevention."
               ghLink="https://github.com/soumyajit4419/AI_For_Social_Good"
               // demoLink="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" <--------Please include a demo link here
@@ -80,7 +80,7 @@ function Projects() {
             <ProjectCard
               imgPath={emotion}
               isBlog={false}
-              title="Face Recognition and Emotion Detection"
+              title="Personal Portfolio Websites"
               description="Trained a CNN classifier using 'FER-2013 dataset' with Keras and tensorflow backened. The classifier sucessfully predicted the various types of emotions of human. And the highest accuracy obtained with the model was 60.1%.
               Then used Open-CV to detect the face in an image and then pass the face to the classifer to predict the emotion of a person."
               ghLink="https://github.com/soumyajit4419/Face_And_Emotion_Detection"

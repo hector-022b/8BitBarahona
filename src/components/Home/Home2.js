@@ -19,12 +19,12 @@ function Home2() {
               A BRIEF <span className="purple"> INTRODUCTION </span>
             </h1>
             <p className="home-about-body">
-              I fell in love with programming and I have at least learnt
-              something, I think… 🤷‍♂️
+              I graduted from Tulane University SoPA, with a 🎓 BS in
+              Information Technology with a Concentration in Integrated App Development
               <br />
-              <br />I am fluent in classics like
+              <br />I am currently trying to master
               <i>
-                <b className="purple"> C++, Javascript and Go. </b>
+                <b className="purple"> Python and Javascript. </b>
               </i>
               <br />
               <br />
