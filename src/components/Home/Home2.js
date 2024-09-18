@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import myImg from "../../Assets/avatar.svg";
+import myImg from "../../Assets/avatar.png";
 import Tilt from "react-parallax-tilt";
 import {
   AiFillGithub,
@@ -60,7 +60,7 @@ function Home2() {
         </Row>
         <Row>
           <Col md={12} className="home-about-social">
-            <h1>FIND ME ON</h1>
+            <h1>SOCIALS</h1>
             <p>
               Feel free to <span className="purple">connect </span>with me
             </p>
