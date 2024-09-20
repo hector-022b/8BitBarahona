@@ -71,7 +71,7 @@ function Projects() {
               isBlog={false}
               title="Capstone"
               description="Led development for a web-enabled MVP, enabling users to browse the AFFES catalog, create a cart, and place orders seamlessly. Implemented role-based access control and addressed system flaws. Collaborated with cross-functional teams, ensuring project milestones and CMMC standards."
-              ghLink="https://github.com/soumyajit4419/AI_For_Social_Good"
+              ghLink="https://github.com/indigo77072/AppDevSouthBalanceSite"
               // demoLink="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" <--------Please include a demo link here
             />
           </Col>
