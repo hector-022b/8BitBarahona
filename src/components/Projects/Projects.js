@@ -70,7 +70,7 @@ function Projects() {
               imgPath={suicide}
               isBlog={false}
               title="Capstone"
-              description="Using 'Natural Launguage Processing' for the detection of suicide-related posts and user's suicide ideation in cyberspace  and thus helping in sucide prevention."
+              description="Led development for a web-enabled MVP, enabling users to browse the AFFES catalog, create a cart, and place orders seamlessly. Implemented role-based access control and addressed system flaws. Collaborated with cross-functional teams, ensuring project milestones and CMMC standards."
               ghLink="https://github.com/soumyajit4419/AI_For_Social_Good"
               // demoLink="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" <--------Please include a demo link here
             />
