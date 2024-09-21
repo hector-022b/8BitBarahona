@@ -22,34 +22,24 @@ function Home2() {
               I graduted from Tulane University SoPA, with a 🎓 BS in
               Information Technology with a Concentration in Integrated App Development
               <br />
-              <br />I am currently trying to master
+              <br />I am currently focused on mastering
               <i>
-                <b className="purple"> Python and Javascript. </b>
+                <b className="purple"> Python, JavaScript,  </b> and <b className="purple"> Modern JavaScript Libraries and Frameworks </b>
+               such as <b className="purple"> React.js and Next.js</b>
               </i>
               <br />
               <br />
-              My field of Interest's are building new &nbsp;
-              <i>
-                <b className="purple">Web Technologies and Products </b> and
-                also in areas related to{" "}
-                <b className="purple">
-                  Blockchain.
-                </b>
-              </i>
+              🌱 I am eager to continue learning and expanding my skillset. I am particularly interested
+              in exploring <b className="purple">emerging technologies</b> and industry <b className="purple">trends </b>
+              to stay at the forefront of the ever-evolving <b className="purple">tech world. </b>
               <br />
               <br />
-              Whenever possible, I also apply my passion for developing products
-              with <b className="purple">Node.js</b> and
-              <i>
-                <b className="purple">
-                  {" "}
-                  Modern Javascript Library and Frameworks
-                </b>
-              </i>
-              &nbsp; like
-              <i>
-                <b className="purple"> React.js and Next.js</b>
-              </i>
+              🌟 Eager to improve my technical skills and problem-solving abilities, I am actively seeking full-time
+              employment and internships in <b className="purple">front-end development</b>. I am particularly excited
+              about exploring <b className="purple">mobile/web development</b>, <b className="purple">bot automation</b>,
+              and <b className="purple">AI</b>, where I see endless opportunities for innovation and growth.
+              <br />
+              <br />
             </p>
           </Col>
           <Col md={4} className="myAvtar">
