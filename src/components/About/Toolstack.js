@@ -25,14 +25,11 @@ function Toolstack() {
       <Col xs={4} md={2} className="tech-icons" title="Github">
         <SiGithub />
       </Col>
-      <Col xs={4} md={2} className="tech-icons" title="Slack">
-        <SiSlack />
+      <Col xs={4} md={2} className="tech-icons" title="Git">
+        <SiGit />
       </Col>
       <Col xs={4} md={2} className="tech-icons" title="Vercel">
         <SiVercel />
-      </Col>
-      <Col xs={4} md={2} className="tech-icons" title="Git">
-        <SiGit />
       </Col>
       <Col xs={4} md={2} className="tech-icons" title="Microsoft Azure">
         <SiMicrosoftazure />
