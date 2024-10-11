@@ -19,7 +19,7 @@ function Home2() {
               A BRIEF <span className="purple"> INTRODUCTION </span>
             </h1>
             <p className="home-about-body">
-              I graduted from Tulane University SoPA, with a 🎓 BS in
+              I graduted from Tulane University SoPA with a 🎓 BS in
               Information Technology with a Concentration in Integrated App Development
               <br />
               <br />I am currently focused on mastering
@@ -86,14 +86,14 @@ function Home2() {
                 </a>
               </li>
               <li className="social-icons">
-                <a
+                {/*<a
                   href="https://www.instagram.com/"
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour home-social-icons"
                 >
                   <AiFillInstagram />
-                </a>
+                </a>*/}
               </li>
             </ul>
           </Col>
