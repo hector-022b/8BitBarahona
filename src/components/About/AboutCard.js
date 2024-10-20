@@ -11,7 +11,9 @@ function AboutCard() {
             Hello Everyone, I'm <span className="purple">Hector Barahona </span>
             from <span className="purple"> San Francisco, California.</span>
             <br />
-            🎓I recently graduated from Tulane SoPA, specializing in Integrated App Development.
+            <br />
+            🎓I graduated from Tulane University SoPA, specializing in Integrated App Development.
+            <br />
             <br />
             🚀As a first-generation university graduate, I am proud to have achieved this
             milestone.🌱I am eager to continue learning and expanding my skillset.
@@ -29,7 +31,7 @@ function AboutCard() {
               <ImPointRight /> Watching Anime
             </li>
             <li className="about-activity">
-              <ImPointRight /> Travelling
+              <ImPointRight /> Traveling
             </li>
           </ul>
 
