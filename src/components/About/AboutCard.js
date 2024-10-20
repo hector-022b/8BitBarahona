@@ -15,7 +15,7 @@ function AboutCard() {
             🎓I graduated from Tulane University SoPA, specializing in Integrated App Development.
             <br />
             <br />
-            🚀As a first-generation university graduate, I am proudto have achieved this
+            🚀As a first-generation university graduate, I am proud to have achieved this
             milestone. 🌱I am eager to continue learning and expanding my skillset.
             I am particularly interested in exploring emerging technologies and industry
             trends to stay at the forefront of the ever-evolving tech world.
