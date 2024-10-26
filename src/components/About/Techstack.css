@@ -1,0 +1,35 @@
+.tech-icons {
+    position: relative;
+    text-align: center;
+    font-size: 3rem;
+    cursor: pointer;
+  }
+  
+  .tech-title-overlay {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+  
+  /* Hover effect for desktop */
+  .tech-icons:hover .tech-title-overlay,
+  .tech-title-overlay.visible {
+    opacity: 0.9;
+  }
+  
+  /* Only apply click-based visibility for mobile */
+  @media (max-width: 768px) {
+    .tech-icons.mobile-click:hover .tech-title-overlay {
+      opacity: 0; /* Disable hover effect on mobile */
+    }
+  }
+  
