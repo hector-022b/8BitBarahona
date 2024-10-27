@@ -19,7 +19,7 @@ function Techstack() {
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (!e.target.closest(".tech-icons")) {
-        setClickedTitle(null);
+        setClickedTitle(null); // Clear the title only if clicked outside an icon
       }
     };
 
@@ -28,7 +28,7 @@ function Techstack() {
   }, []);
 
   const handleClick = (title) => {
-    setClickedTitle((prevTitle) => (prevTitle === title ? null : title));
+    setClickedTitle((prevTitle) => (prevTitle === title ? null : title)); // Toggle title on tap
   };
 
   const icons = [
