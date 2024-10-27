@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import { CgCPlusPlus } from "react-icons/cg";
 import {
@@ -15,17 +15,6 @@ import "./StackStyles.css";
 
 function Techstack() {
   const [clickedTitle, setClickedTitle] = useState(null);
-
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (!e.target.closest(".tech-icons")) {
-        setClickedTitle(null); // Clear the title only if clicked outside an icon
-      }
-    };
-
-    document.addEventListener("click", handleClickOutside);
-    return () => document.removeEventListener("click", handleClickOutside);
-  }, []);
 
   const handleClick = (title) => {
     setClickedTitle((prevTitle) => (prevTitle === title ? null : title)); // Toggle title on tap
