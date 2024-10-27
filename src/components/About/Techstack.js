@@ -1,7 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { Col, Row } from "react-bootstrap";
 import { CgCPlusPlus } from "react-icons/cg";
-import { DiJavascript1, DiReact, DiNodejs, DiPython, DiJava, DiHtml5, DiPhp, DiCss3 } from "react-icons/di";
+import {
+  DiJavascript1,
+  DiReact,
+  DiNodejs,
+  DiPython,
+  DiJava,
+  DiHtml5,
+  DiPhp,
+  DiCss3,
+} from "react-icons/di";
 import "./StackStyles.css";
 
 function Techstack() {
@@ -42,24 +51,22 @@ function Techstack() {
   ];
 
   return (
-    <Row className="stack-container">
+    <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
       {icons.map((icon, index) => (
         <Col
           key={index}
           xs={4}
           md={2}
-          className="tech-icons"
+          className={`tech-icons ${isMobile ? "mobile-click" : ""}`}
           onClick={() => handleClick(icon.title)}
         >
-          <div className="icon-card">
-            {icon.component}
-            <div
-              className={`tech-title-overlay ${
-                clickedTitle === icon.title ? "visible" : ""
-              }`}
-            >
-              {icon.title}
-            </div>
+          {icon.component}
+          <div
+            className={`tech-title-overlay ${
+              clickedTitle === icon.title ? "visible" : ""
+            }`}
+          >
+            {icon.title}
           </div>
         </Col>
       ))}

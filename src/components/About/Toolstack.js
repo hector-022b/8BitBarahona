@@ -1,6 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { Col, Row } from "react-bootstrap";
-import { SiVisualstudiocode, SiGithub, SiSlack, SiVercel, SiWindows, SiGit, SiMicrosoftazure, SiMysql, SiFigma, SiMicrosoftoffice } from "react-icons/si";
+import {
+  SiVisualstudiocode,
+  SiGithub,
+  SiSlack,
+  SiVercel,
+  SiWindows,
+  SiGit,
+  SiMicrosoftazure,
+  SiMysql,
+  SiFigma,
+  SiMicrosoftoffice,
+} from "react-icons/si";
 import "./StackStyles.css";
 
 function Toolstack() {
@@ -28,7 +39,7 @@ function Toolstack() {
     setClickedTitle(clickedTitle === title ? null : title);
   };
 
-  const icons = [
+  const tools = [
     { component: <SiWindows />, title: "Windows" },
     { component: <SiVisualstudiocode />, title: "Visual Studio Code" },
     { component: <SiGithub />, title: "Github" },
@@ -41,24 +52,22 @@ function Toolstack() {
   ];
 
   return (
-    <Row className="stack-container">
-      {icons.map((icon, index) => (
+    <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
+      {tools.map((tool, index) => (
         <Col
           key={index}
           xs={4}
           md={2}
-          className="tech-icons"
-          onClick={() => handleClick(icon.title)}
+          className={`tech-icons ${isMobile ? "mobile-click" : ""}`}
+          onClick={() => handleClick(tool.title)}
         >
-          <div className="icon-card">
-            {icon.component}
-            <div
-              className={`tech-title-overlay ${
-                clickedTitle === icon.title ? "visible" : ""
-              }`}
-            >
-              {icon.title}
-            </div>
+          {tool.component}
+          <div
+            className={`tech-title-overlay ${
+              clickedTitle === tool.title ? "visible" : ""
+            }`}
+          >
+            {tool.title}
           </div>
         </Col>
       ))}
