@@ -12,19 +12,16 @@ import {
   SiFigma,
   SiMicrosoftoffice,
 } from "react-icons/si";
-import "./Toolstack.css";
+import "./StackStyles.css";
 
 function Toolstack() {
   const [clickedTitle, setClickedTitle] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
     const handleClickOutside = (e) => {
-      if (!e.target.closest(".tech-icons")) {
+      if (!e.target.closest(".stack-icons")) {
         setClickedTitle(null);
       }
     };
@@ -62,12 +59,12 @@ function Toolstack() {
           key={index}
           xs={4}
           md={2}
-          className={`tech-icons ${isMobile ? "mobile-click" : ""}`}
+          className="stack-icons"
           onClick={() => handleClick(tool.title)}
         >
           {tool.component}
           <div
-            className={`tech-title-overlay ${
+            className={`stack-title-overlay ${
               clickedTitle === tool.title ? "visible" : ""
             }`}
           >

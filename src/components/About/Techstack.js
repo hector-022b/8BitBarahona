@@ -11,20 +11,16 @@ import {
   DiPhp,
   DiCss3,
 } from "react-icons/di";
-import "./Techstack.css";
+import "./StackStyles.css";
 
 function Techstack() {
   const [clickedTitle, setClickedTitle] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    // Close overlay when clicking outside
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
     const handleClickOutside = (e) => {
-      if (!e.target.closest(".tech-icons")) {
+      if (!e.target.closest(".stack-icons")) {
         setClickedTitle(null);
       }
     };
@@ -62,12 +58,12 @@ function Techstack() {
           key={index}
           xs={4}
           md={2}
-          className={`tech-icons ${isMobile ? "mobile-click" : ""}`}
+          className="stack-icons"
           onClick={() => handleClick(icon.title)}
         >
           {icon.component}
           <div
-            className={`tech-title-overlay ${
+            className={`stack-title-overlay ${
               clickedTitle === icon.title ? "visible" : ""
             }`}
           >
