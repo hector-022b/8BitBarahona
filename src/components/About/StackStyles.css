@@ -20,15 +20,14 @@
   pointer-events: none;
 }
 
-/* Hover effect for desktop */
 .tech-icons:hover .tech-title-overlay,
 .tech-title-overlay.visible {
   opacity: 0.9;
 }
 
-/* Only apply click-based visibility for mobile */
+/* Mobile behavior: disable hover and only show title on click */
 @media (max-width: 768px) {
-  .tech-icons.mobile-click:hover .tech-title-overlay {
+  .tech-icons:hover .tech-title-overlay {
     opacity: 0; /* Disable hover effect on mobile */
   }
 }

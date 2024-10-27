@@ -16,27 +16,20 @@ import "./StackStyles.css";
 
 function Toolstack() {
   const [clickedTitle, setClickedTitle] = useState(null);
-  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 768);
-    handleResize();
-
     const handleClickOutside = (e) => {
-      if (!e.target.closest(".tech-icons")) setClickedTitle(null);
+      if (!e.target.closest(".tech-icons")) {
+        setClickedTitle(null);
+      }
     };
 
-    window.addEventListener("resize", handleResize);
     document.addEventListener("click", handleClickOutside);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-      document.removeEventListener("click", handleClickOutside);
-    };
+    return () => document.removeEventListener("click", handleClickOutside);
   }, []);
 
   const handleClick = (title) => {
-    setClickedTitle(clickedTitle === title ? null : title);
+    setClickedTitle((prevTitle) => (prevTitle === title ? null : title));
   };
 
   const tools = [
@@ -58,7 +51,7 @@ function Toolstack() {
           key={index}
           xs={4}
           md={2}
-          className={`tech-icons ${isMobile ? "mobile-click" : ""}`}
+          className="tech-icons"
           onClick={() => handleClick(tool.title)}
         >
           {tool.component}
