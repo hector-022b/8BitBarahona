@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Col, Row } from "react-bootstrap";
 import { CgCPlusPlus } from "react-icons/cg";
 import {
@@ -15,9 +15,20 @@ import "./StackStyles.css";
 
 function Techstack() {
   const [clickedTitle, setClickedTitle] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const handleClick = (title) => {
-    setClickedTitle((prevTitle) => (prevTitle === title ? null : title)); // Toggle title on tap
+    setClickedTitle(clickedTitle === title ? null : title);
   };
 
   const icons = [
@@ -39,7 +50,7 @@ function Techstack() {
           key={index}
           xs={4}
           md={2}
-          className="tech-icons"
+          className={`tech-icons ${isMobile ? "mobile-click" : ""}`}
           onClick={() => handleClick(icon.title)}
         >
           {icon.component}

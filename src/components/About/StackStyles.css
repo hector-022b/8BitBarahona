@@ -27,7 +27,7 @@
 
 /* Disable hover effect on mobile */
 @media (max-width: 768px) {
-  .tech-icons:hover .tech-title-overlay {
-    opacity: 0;
+  .tech-icons.mobile-click:hover .tech-title-overlay {
+      opacity: 0;
   }
 }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Col, Row } from "react-bootstrap";
 import {
   SiVisualstudiocode,
@@ -16,9 +16,20 @@ import "./StackStyles.css";
 
 function Toolstack() {
   const [clickedTitle, setClickedTitle] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const handleClick = (title) => {
-    setClickedTitle((prevTitle) => (prevTitle === title ? null : title));
+    setClickedTitle(clickedTitle === title ? null : title);
   };
 
   const tools = [
@@ -40,7 +51,7 @@ function Toolstack() {
           key={index}
           xs={4}
           md={2}
-          className="tech-icons"
+          className={`tech-icons ${isMobile ? "mobile-click" : ""}`}
           onClick={() => handleClick(tool.title)}
         >
           {tool.component}
