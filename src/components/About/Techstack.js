@@ -1,16 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Col, Row } from "react-bootstrap";
 import { CgCPlusPlus } from "react-icons/cg";
-import {
-  DiJavascript1,
-  DiReact,
-  DiNodejs,
-  DiPython,
-  DiJava,
-  DiHtml5,
-  DiPhp,
-  DiCss3,
-} from "react-icons/di";
+import { DiJavascript1, DiReact, DiNodejs, DiPython, DiJava, DiHtml5, DiPhp, DiCss3 } from "react-icons/di";
 import "./StackStyles.css";
 
 function Techstack() {
@@ -19,13 +10,12 @@ function Techstack() {
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    handleResize();
+
     const handleClickOutside = (e) => {
-      if (!e.target.closest(".stack-icons")) {
-        setClickedTitle(null);
-      }
+      if (!e.target.closest(".tech-icons")) setClickedTitle(null);
     };
 
-    handleResize();
     window.addEventListener("resize", handleResize);
     document.addEventListener("click", handleClickOutside);
 
@@ -52,22 +42,24 @@ function Techstack() {
   ];
 
   return (
-    <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
+    <Row className="stack-container">
       {icons.map((icon, index) => (
         <Col
           key={index}
           xs={4}
           md={2}
-          className="stack-icons"
+          className="tech-icons"
           onClick={() => handleClick(icon.title)}
         >
-          {icon.component}
-          <div
-            className={`stack-title-overlay ${
-              clickedTitle === icon.title ? "visible" : ""
-            }`}
-          >
-            {icon.title}
+          <div className="icon-card">
+            {icon.component}
+            <div
+              className={`tech-title-overlay ${
+                clickedTitle === icon.title ? "visible" : ""
+              }`}
+            >
+              {icon.title}
+            </div>
           </div>
         </Col>
       ))}
