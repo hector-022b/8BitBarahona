@@ -1,0 +1,348 @@
+/* =========================================
+   DEFAULT — 8BIT PURPLE / DARK
+   ========================================= */
+
+:root,
+[data-theme="8bit-purple"][data-mode="dark"] {
+  --bg-primary: #0c0818;
+  --bg-secondary: #151020;
+  --bg-surface: #1d162b;
+  --bg-navbar: rgba(20, 15, 34, 0.82);
+
+  --text-primary: #f7f3ff;
+  --text-secondary: #c9bfd8;
+
+  --accent-primary: #c770f0;
+  --accent-secondary: #6f8cff;
+  --accent-hover: #da8cff;
+
+  --border-primary: rgba(199, 112, 240, 0.55);
+  --shadow-primary: rgba(118, 62, 160, 0.35);
+
+  --gradient-primary: linear-gradient(
+    135deg,
+    #c770f0,
+    #6f8cff
+  );
+
+  --section-background: linear-gradient(
+    to bottom left,
+    rgba(17, 16, 16, 0.58),
+    rgba(12, 8, 24, 0.92)
+  );
+
+  --hero-overlay: linear-gradient(
+    to bottom left,
+    rgba(17, 16, 16, 0.68),
+    rgba(12, 10, 22, 0.88)
+  );
+}
+
+
+
+/* =========================================
+   8BIT PURPLE / LIGHT
+   ========================================= */
+
+[data-theme="8bit-purple"][data-mode="light"] {
+  --bg-primary: #f6f2fb;
+  --bg-secondary: #ffffff;
+  --bg-surface: #eee7f7;
+  --bg-navbar: rgba(250, 247, 255, 0.88);
+
+  --text-primary: #21172c;
+  --text-secondary: #62546f;
+
+  --accent-primary: #8f3fc1;
+  --accent-secondary: #536de8;
+  --accent-hover: #a94edb;
+
+  --border-primary: rgba(143, 63, 193, 0.42);
+  --shadow-primary: rgba(105, 63, 145, 0.2);
+
+  --gradient-primary: linear-gradient(
+    135deg,
+    #9d4edd,
+    #536de8
+  );
+
+  --section-background: linear-gradient(
+    to bottom left,
+    #ffffff,
+    #eee7f7
+  );
+
+  --hero-overlay: linear-gradient(
+    to bottom left,
+    rgba(246, 242, 251, 0.9),
+    rgba(238, 231, 247, 0.96)
+  );
+}
+
+
+/* =========================================
+   CRIMSON STATIC / DARK
+   ========================================= */
+
+[data-theme="crimson-static"][data-mode="dark"] {
+  --bg-primary: #080808;
+  --bg-secondary: #101010;
+  --bg-surface: #171313;
+  --bg-navbar: rgba(10, 10, 10, 0.88);
+
+  --text-primary: #f5f1f1;
+  --text-secondary: #b8aaaa;
+
+  --accent-primary: #d11f32;
+  --accent-secondary: #7a0d18;
+  --accent-hover: #ff394c;
+
+  --border-primary: rgba(209, 31, 50, 0.5);
+  --shadow-primary: rgba(180, 20, 35, 0.3);
+
+  --gradient-primary: linear-gradient(
+    135deg,
+    #d11f32,
+    #650812
+  );
+
+  --section-background: linear-gradient(
+    to bottom left,
+    #111111,
+    #050505
+  );
+
+  --hero-overlay: linear-gradient(
+    to bottom left,
+    rgba(20, 20, 20, 0.72),
+    rgba(5, 5, 5, 0.94)
+  );
+}
+
+
+/* =========================================
+   CRIMSON STATIC / LIGHT
+   ========================================= */
+
+[data-theme="crimson-static"][data-mode="light"] {
+  --bg-primary: #f4f1f1;
+  --bg-secondary: #ffffff;
+  --bg-surface: #ece6e6;
+  --bg-navbar: rgba(248, 245, 245, 0.9);
+
+  --text-primary: #1c1515;
+  --text-secondary: #665656;
+
+  --accent-primary: #9e1725;
+  --accent-secondary: #441014;
+  --accent-hover: #c82132;
+
+  --border-primary: rgba(158, 23, 37, 0.38);
+  --shadow-primary: rgba(110, 26, 35, 0.18);
+
+  --gradient-primary: linear-gradient(
+    135deg,
+    #b51d2d,
+    #571117
+  );
+
+  --section-background: linear-gradient(
+    to bottom left,
+    #ffffff,
+    #eee8e8
+  );
+
+  --hero-overlay: linear-gradient(
+    to bottom left,
+    rgba(244, 241, 241, 0.91),
+    rgba(236, 230, 230, 0.97)
+  );
+}
+
+
+/* =========================================
+   CYBER SUNSET / DARK
+   ========================================= */
+
+[data-theme="cyber-sunset"][data-mode="dark"] {
+  --bg-primary: #140b18;
+  --bg-secondary: #211124;
+  --bg-surface: #2a172e;
+  --bg-navbar: rgba(26, 12, 29, 0.86);
+
+  --text-primary: #fff5ed;
+  --text-secondary: #dbc4d1;
+
+  --accent-primary: #ff7849;
+  --accent-secondary: #ff3fa4;
+  --accent-hover: #ff9c5f;
+
+  --border-primary: rgba(255, 103, 104, 0.52);
+  --shadow-primary: rgba(255, 63, 164, 0.28);
+
+  --gradient-primary: linear-gradient(
+    135deg,
+    #ff8a3d,
+    #ff3fa4
+  );
+
+  --section-background: linear-gradient(
+    to bottom left,
+    #251228,
+    #110913
+  );
+
+  --hero-overlay: linear-gradient(
+    to bottom left,
+    rgba(45, 20, 38, 0.68),
+    rgba(17, 8, 20, 0.92)
+  );
+}
+
+
+/* =========================================
+   CYBER SUNSET / LIGHT
+   ========================================= */
+
+[data-theme="cyber-sunset"][data-mode="light"] {
+  --bg-primary: #fff5ec;
+  --bg-secondary: #fffaf6;
+  --bg-surface: #fce8e2;
+  --bg-navbar: rgba(255, 249, 244, 0.9);
+
+  --text-primary: #321c29;
+  --text-secondary: #745663;
+
+  --accent-primary: #e85f32;
+  --accent-secondary: #d82b87;
+  --accent-hover: #f47748;
+
+  --border-primary: rgba(225, 78, 94, 0.4);
+  --shadow-primary: rgba(208, 70, 128, 0.18);
+
+  --gradient-primary: linear-gradient(
+    135deg,
+    #f47748,
+    #d82b87
+  );
+
+  --section-background: linear-gradient(
+    to bottom left,
+    #fffaf6,
+    #f9e4e1
+  );
+
+  --hero-overlay: linear-gradient(
+    to bottom left,
+    rgba(255, 245, 236, 0.9),
+    rgba(249, 228, 225, 0.97)
+  );
+}
+
+
+/* =========================================
+   THEME-SPECIFIC HERO BACKGROUNDS
+   ========================================= */
+
+/* 8BIT PURPLE — DARK */
+:root,
+[data-theme="8bit-purple"][data-mode="dark"] {
+  --hero-background:
+    radial-gradient(
+      circle at 75% 30%,
+      rgba(111, 140, 255, 0.22),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 25% 60%,
+      rgba(199, 112, 240, 0.18),
+      transparent 40%
+    ),
+    #0c0818;
+}
+
+/* 8BIT PURPLE — LIGHT */
+[data-theme="8bit-purple"][data-mode="light"] {
+  --hero-background:
+    radial-gradient(
+      circle at 75% 30%,
+      rgba(111, 140, 255, 0.12),
+      transparent 40%
+    ),
+    linear-gradient(
+      135deg,
+      #f6f2fb,
+      #eee7f7
+    );
+}
+
+/* CRIMSON STATIC — DARK */
+[data-theme="crimson-static"][data-mode="dark"] {
+  --hero-background:
+    radial-gradient(
+      circle at 75% 30%,
+      rgba(209, 31, 50, 0.18),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #050505,
+      #110709 60%,
+      #080808
+    );
+}
+
+/* CRIMSON STATIC — LIGHT */
+[data-theme="crimson-static"][data-mode="light"] {
+  --hero-background:
+    radial-gradient(
+      circle at 75% 30%,
+      rgba(158, 23, 37, 0.10),
+      transparent 40%
+    ),
+    linear-gradient(
+      135deg,
+      #f4f1f1,
+      #ece6e6
+    );
+}
+
+/* CYBER SUNSET — DARK */
+[data-theme="cyber-sunset"][data-mode="dark"] {
+  --hero-background:
+    radial-gradient(
+      circle at 80% 25%,
+      rgba(255, 63, 164, 0.24),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 20% 70%,
+      rgba(255, 120, 73, 0.20),
+      transparent 40%
+    ),
+    linear-gradient(
+      135deg,
+      #120a17,
+      #281329
+    );
+}
+
+/* CYBER SUNSET — LIGHT */
+[data-theme="cyber-sunset"][data-mode="light"] {
+  --hero-background:
+    radial-gradient(
+      circle at 80% 25%,
+      rgba(255, 63, 164, 0.12),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 20% 70%,
+      rgba(255, 120, 73, 0.12),
+      transparent 40%
+    ),
+    linear-gradient(
+      135deg,
+      #fff5ec,
+      #f9e4e1
+    );
+}

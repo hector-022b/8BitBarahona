@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
+
+import { Link, NavLink } from "react-router-dom";
+
 import logo from "../Assets/logo.png";
-import { Link } from "react-router-dom";
+
 import {
   AiOutlineHome,
   AiOutlineFundProjectionScreen,
@@ -12,109 +15,257 @@ import {
 
 import { CgFileDocument } from "react-icons/cg";
 
-function NavBar() {
-  const [expand, updateExpanded] = useState(false);
-  const [navColour, updateNavbar] = useState(false);
+import {
+  BsSun,
+  BsMoon,
+  BsPalette,
+  BsChevronDown,
+  BsCheck2,
+} from "react-icons/bs";
 
-  function scrollHandler() {
-    if (window.scrollY >= 20) {
-      updateNavbar(true);
-    } else {
-      updateNavbar(false);
-    }
-  }
+import { useTheme } from "../context/ThemeContext";
+
+function NavBar() {
+  const [expanded, setExpanded] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [themeMenuOpen, setThemeMenuOpen] = useState(false);
+
+  const themeMenuRef = useRef(null);
+
+  const {
+    theme,
+    setTheme,
+    mode,
+    toggleMode,
+  } = useTheme();
+
+  const themes = [
+    {
+      value: "8bit-purple",
+      label: "8Bit Purple",
+    },
+    {
+      value: "crimson-static",
+      label: "Crimson Static",
+    },
+    {
+      value: "cyber-sunset",
+      label: "Cyber Sunset",
+    },
+  ];
+
+  const activeTheme =
+    themes.find((item) => item.value === theme) ?? themes[0];
 
   useEffect(() => {
-  window.addEventListener("scroll", scrollHandler);
+    const handleScroll = () => {
+      setScrolled(window.scrollY >= 20);
+    };
 
-  return () => {
-    window.removeEventListener("scroll", scrollHandler);
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        themeMenuRef.current &&
+        !themeMenuRef.current.contains(event.target)
+      ) {
+        setThemeMenuOpen(false);
+      }
+    };
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        setThemeMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
+  const closeNavbar = () => {
+    setExpanded(false);
+    setThemeMenuOpen(false);
   };
-}, []);
+
+  const chooseTheme = (newTheme) => {
+    setTheme(newTheme);
+    setThemeMenuOpen(false);
+  };
 
   return (
     <Navbar
-      expanded={expand}
+      expanded={expanded}
       fixed="top"
-      expand="md"
-      className={navColour ? "sticky" : "navbar"}
+      expand="lg"
+      className={`site-navbar ${scrolled ? "site-navbar-scrolled" : ""}`}
     >
       <Container>
-        <Navbar.Brand href="/" className="d-flex">
-          <img src={logo} className="img-fluid logo" alt="brand" />
-        </Navbar.Brand>
-        <Navbar.Toggle
-          aria-controls="responsive-navbar-nav"
-          onClick={() => {
-            updateExpanded(expand ? false : "expanded");
-          }}
+        <Navbar.Brand
+          as={Link}
+          to="/"
+          className="navbar-brand-link"
+          onClick={closeNavbar}
         >
-          <span></span>
-          <span></span>
-          <span></span>
+          <img
+            src={logo}
+            className="navbar-logo"
+            alt="Hector Barahona"
+          />
+        </Navbar.Brand>
+
+        <Navbar.Toggle
+          aria-controls="portfolio-navbar"
+          aria-label="Toggle navigation"
+          onClick={() => setExpanded((current) => !current)}
+        >
+          <span />
+          <span />
+          <span />
         </Navbar.Toggle>
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="ms-auto" defaultActiveKey="#home">
-            <Nav.Item>
-              <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
-                <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
-              </Nav.Link>
-            </Nav.Item>
 
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/about"
-                onClick={() => updateExpanded(false)}
-              >
-                <AiOutlineUser style={{ marginBottom: "2px" }} /> About
-              </Nav.Link>
-            </Nav.Item>
+        <Navbar.Collapse id="portfolio-navbar">
+          <Nav className="ms-auto navbar-links">
+            <Nav.Link
+              as={NavLink}
+              to="/"
+              end
+              onClick={closeNavbar}
+            >
+              <AiOutlineHome />
+              Home
+            </Nav.Link>
 
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/project"
-                onClick={() => updateExpanded(false)}
-              >
-                <AiOutlineFundProjectionScreen
-                  style={{ marginBottom: "2px" }}
-                />{" "}
-                Projects
-              </Nav.Link>
-            </Nav.Item>
+            <Nav.Link
+              as={NavLink}
+              to="/about"
+              onClick={closeNavbar}
+            >
+              <AiOutlineUser />
+              About
+            </Nav.Link>
 
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/resume"
-                onClick={() => updateExpanded(false)}
-              >
-                <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
-              </Nav.Link>
-            </Nav.Item>
+            <Nav.Link
+              as={NavLink}
+              to="/project"
+              onClick={closeNavbar}
+            >
+              <AiOutlineFundProjectionScreen />
+              Projects
+            </Nav.Link>
 
-            <Nav.Item>
-              {/*<Nav.Link
-                href="https://soumyajitblogs.vercel.app/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <ImBlog style={{ marginBottom: "2px" }} /> Blogs
-              </Nav.Link>*/}
-            </Nav.Item>
-
-            <Nav.Item className="fork-btn">
-              {/*<Button
-                href="https://github.com/soumyajit4419/Portfolio"
-                target="_blank"
-                className="fork-btn-inner"
-              >
-                <CgGitFork style={{ fontSize: "1.2em" }} />{" "}
-                <AiFillStar style={{ fontSize: "1.1em" }} />
-              </Button>*/}
-            </Nav.Item>
+            <Nav.Link
+              as={NavLink}
+              to="/resume"
+              onClick={closeNavbar}
+            >
+              <CgFileDocument />
+              Resume
+            </Nav.Link>
           </Nav>
+
+          <div className="navbar-controls">
+            <button
+              type="button"
+              className="mode-toggle"
+              onClick={toggleMode}
+              aria-label={`Switch to ${
+                mode === "dark" ? "light" : "dark"
+              } mode`}
+              title={`Switch to ${
+                mode === "dark" ? "light" : "dark"
+              } mode`}
+            >
+              {mode === "dark" ? <BsSun /> : <BsMoon />}
+            </button>
+
+            <div
+              className="theme-dropdown"
+              ref={themeMenuRef}
+            >
+              <button
+                type="button"
+                className="theme-dropdown-trigger"
+                onClick={() =>
+                  setThemeMenuOpen((current) => !current)
+                }
+                aria-haspopup="menu"
+                aria-expanded={themeMenuOpen}
+              >
+                <BsPalette
+                  className="theme-icon"
+                  aria-hidden="true"
+                />
+
+                <span className="theme-dropdown-label">
+                  Theme
+                </span>
+
+                <span className="theme-dropdown-value">
+                  {activeTheme.label}
+                </span>
+
+                <BsChevronDown
+                  className={`theme-dropdown-chevron ${
+                    themeMenuOpen ? "open" : ""
+                  }`}
+                  aria-hidden="true"
+                />
+              </button>
+
+              {themeMenuOpen && (
+                <div
+                  className="theme-dropdown-menu"
+                  role="menu"
+                >
+                  {themes.map((item) => {
+                    const isActive =
+                      item.value === theme;
+
+                    return (
+                      <button
+                        key={item.value}
+                        type="button"
+                        className={`theme-dropdown-option ${
+                          isActive ? "active" : ""
+                        }`}
+                        onClick={() =>
+                          chooseTheme(item.value)
+                        }
+                        role="menuitem"
+                      >
+                        <span className="theme-option-dot" />
+
+                        <span>
+                          {item.label}
+                        </span>
+
+                        {isActive && (
+                          <BsCheck2
+                            className="theme-option-check"
+                            aria-hidden="true"
+                          />
+                        )}
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+          </div>
         </Navbar.Collapse>
       </Container>
     </Navbar>

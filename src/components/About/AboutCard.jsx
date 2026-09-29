@@ -1,44 +1,108 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
-import { ImPointRight } from "react-icons/im";
+
+import {
+  FaGraduationCap,
+  FaSeedling,
+  FaLaptopCode,
+  FaFutbol,
+  FaPlane,
+} from "react-icons/fa";
+
+import { MdEmojiPeople } from "react-icons/md";
+import { GiBookshelf } from "react-icons/gi";
 
 function AboutCard() {
   return (
     <Card className="quote-card-view">
       <Card.Body>
-        <blockquote className="blockquote mb-0">
-          <p style={{ textAlign: "justify" }}>
-            Hello Everyone, I'm <span className="purple">Hector Barahona </span>
-            from <span className="purple"> San Francisco, California.</span>
-            <br />
-            <br />
-            🎓I graduated from Tulane University SoPA, specializing in Integrated App Development.
-            <br />
-            <br />
-            🚀As a first-generation university graduate, I am proud to have achieved this milestone.
-            🌱I am eager to continue learning and expanding my skillset.I am particularly interested
-            in exploring emerging technologies and industry trends to stay at the forefront of the ever-evolving tech world.
-            <br />
-            <br />
-            🎮Outside of my professional pursuits, I enjoy a variety of interests including:
+        <div className="about-card-content">
+          <p className="about-intro">
+            👋 Hi! I&apos;m <strong>Hector Barahona</strong>, originally from
+            the San Francisco Bay Area. I enjoy solving problems, learning new
+            technologies, and building things that are useful.
           </p>
-          <ul>
-            <li className="about-activity">
-              <ImPointRight /> Playing/ Watching Soccer
-            </li>
-            <li className="about-activity">
-              <ImPointRight /> Watching Anime
-            </li>
-            <li className="about-activity">
-              <ImPointRight /> Traveling
-            </li>
-          </ul>
 
-          <p style={{ color: "rgb(155 126 172)" }}>
-            "Make your own path and change the world around you"{" "}
-          </p>
-          <footer className="blockquote-footer">Naruto Uzumaki</footer>
-        </blockquote>
+          <div className="about-highlights">
+            <div className="about-highlight">
+              <div className="about-highlight-icon">
+                <FaGraduationCap />
+              </div>
+
+              <div>
+                <h3>🎓 Information Technology Graduate</h3>
+
+                <p>
+                  I graduated from Tulane University SoPA with a BS in
+                  Information Technology and a concentration in Integrated
+                  Application Development.
+                </p>
+              </div>
+            </div>
+
+            <div className="about-highlight">
+              <div className="about-highlight-icon">
+                <MdEmojiPeople />
+              </div>
+
+              <div>
+                <h3>🚀 Proud First-Generation Graduate</h3>
+
+                <p>
+                  As a first-generation university graduate, I&apos;m proud to
+                  have achieved this milestone and of the path that brought me
+                  into technology.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="about-focus">
+            <FaSeedling className="about-focus-icon" />
+
+            <div>
+              <p className="about-focus-label">🌱 Always Learning</p>
+
+              <p>
+                I&apos;m continuing to expand my skill set through hands-on
+                projects and continuous learning. I&apos;m especially interested
+                in <strong>web and software development</strong>,{" "}
+                <strong>automation</strong>, and <strong>AI</strong>, and I enjoy
+                exploring technologies that challenge me to grow as a developer
+                and problem solver.
+              </p>
+            </div>
+          </div>
+
+          <div className="about-interests">
+            <p className="about-interests-label">
+              <FaLaptopCode />
+              🎮 Outside of tech
+            </p>
+
+            <div className="about-interest-list">
+              <span>
+                <FaFutbol />
+                Soccer
+              </span>
+
+              <span>
+                <GiBookshelf />
+                Anime
+              </span>
+
+              <span>
+                <FaPlane />
+                Traveling
+              </span>
+            </div>
+          </div>
+
+          <blockquote className="about-quote">
+            <p>&ldquo;Make your own path and change the world around you.&rdquo;</p>
+            <cite>— Naruto Uzumaki</cite>
+          </blockquote>
+        </div>
       </Card.Body>
     </Card>
   );

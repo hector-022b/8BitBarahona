@@ -1,44 +1,90 @@
 import React from "react";
-import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
+
 import { CgWebsite } from "react-icons/cg";
-import { BsGithub } from "react-icons/bs";
+import { BsGithub, BsCodeSlash } from "react-icons/bs";
 
-function ProjectCards(props) {
+function ProjectCard({
+  imgPath,
+  title,
+  description,
+  ghLink,
+  demoLink,
+  technologies = [],
+  projectType = "Code Project",
+}) {
   return (
-    <Card className="project-card-view">
-      <Card.Img variant="top" src={props.imgPath} alt="card-img" />
-      <Card.Body>
-        <Card.Title>{props.title}</Card.Title>
-        <Card.Text style={{ textAlign: "justify" }}>
-          {props.description}
-        </Card.Text>
+    <article className="project-card-view">
+      {imgPath ? (
+        <div className="project-image-wrapper">
+          <img
+            src={imgPath}
+            alt={`${title} project preview`}
+            className="project-image"
+          />
+        </div>
+      ) : (
+        <div className="project-code-preview">
+          <BsCodeSlash className="project-code-icon" />
 
-        {/* Conditionally render GitHub button only if ghLink is provided */}
-        {props.ghLink && (
-          <Button variant="primary" href={props.ghLink} target="_blank">
-            <BsGithub /> &nbsp;
-            {props.isBlog ? "Blog" : "GitHub"}
-          </Button>
-        )}
-        {"\n"}
-        {"\n"}
+          <span className="project-code-type">
+            {projectType}
+          </span>
 
-        {/* Render Demo button if demoLink is provided */}
-        {!props.isBlog && props.demoLink && (
-          <Button
-            variant="primary"
-            href={props.demoLink}
-            target="_blank"
-            style={{ marginLeft: "10px" }}
-          >
-            <CgWebsite /> &nbsp;
-            {"Demo"}
-          </Button>
+          <h3>{title}</h3>
+
+          {technologies.length > 0 && (
+            <p>{technologies.join(" • ")}</p>
+          )}
+        </div>
+      )}
+
+      <div className="project-card-content">
+        <h2 className="project-card-title">
+          {title}
+        </h2>
+
+        <p className="project-card-description">
+          {description}
+        </p>
+
+        {technologies.length > 0 && (
+          <div className="project-tech-list">
+            {technologies.map((technology) => (
+              <span key={technology}>
+                {technology}
+              </span>
+            ))}
+          </div>
         )}
-      </Card.Body>
-    </Card>
+
+        <div className="project-card-actions">
+          {ghLink && (
+            <a
+              href={ghLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-link"
+            >
+              <BsGithub />
+              View Code
+            </a>
+          )}
+
+          {demoLink && (
+            <a
+              href={demoLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-link project-link-primary"
+            >
+              <CgWebsite />
+              Live Demo
+            </a>
+          )}
+        </div>
+      </div>
+    </article>
   );
 }
 
-export default ProjectCards;
+export default ProjectCard;

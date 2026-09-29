@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { Col, Row } from "react-bootstrap";
+import React from "react";
+
 import { CgCPlusPlus } from "react-icons/cg";
+
 import {
   DiJavascript1,
   DiReact,
@@ -11,59 +12,34 @@ import {
   DiPhp,
   DiCss3,
 } from "react-icons/di";
+
 import "./StackStyles.css";
 
 function Techstack() {
-  const [clickedTitle, setClickedTitle] = useState(null);
-
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (!e.target.closest(".tech-icons")) {
-        setClickedTitle(null); // Clear the title only if clicked outside an icon
-      }
-    };
-
-    document.addEventListener("click", handleClickOutside);
-    return () => document.removeEventListener("click", handleClickOutside);
-  }, []);
-
-  const handleClick = (title) => {
-    setClickedTitle((prevTitle) => (prevTitle === title ? null : title)); // Toggle title on tap
-  };
-
-  const icons = [
-    { component: <DiPython />, title: "Python" },
-    { component: <DiJavascript1 />, title: "JavaScript" },
-    { component: <DiReact />, title: "React" },
-    { component: <DiHtml5 />, title: "HTML5" },
-    { component: <DiCss3 />, title: "CSS3" },
-    { component: <CgCPlusPlus />, title: "C++" },
-    { component: <DiNodejs />, title: "NodeJs" },
-    { component: <DiPhp />, title: "PHP" },
-    { component: <DiJava />, title: "Java" },
+  const technologies = [
+    { icon: <DiPython />, name: "Python" },
+    { icon: <DiJavascript1 />, name: "JavaScript" },
+    { icon: <DiReact />, name: "React" },
+    { icon: <DiHtml5 />, name: "HTML5" },
+    { icon: <DiCss3 />, name: "CSS3" },
+    { icon: <CgCPlusPlus />, name: "C++" },
+    { icon: <DiNodejs />, name: "Node.js" },
+    { icon: <DiPhp />, name: "PHP" },
+    { icon: <DiJava />, name: "Java" },
   ];
 
   return (
-    <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
-      {icons.map((icon, index) => (
-        <Col
-          key={index}
-          xs={4}
-          md={2}
-          className="tech-icons"
-          onClick={() => handleClick(icon.title)}
-        >
-          {icon.component}
-          <div
-            className={`tech-title-overlay ${
-              clickedTitle === icon.title ? "visible" : ""
-            }`}
-          >
-            {icon.title}
+    <div className="stack-grid">
+      {technologies.map((technology) => (
+        <div className="stack-item" key={technology.name}>
+          <div className="stack-icon" aria-hidden="true">
+            {technology.icon}
           </div>
-        </Col>
+
+          <span className="stack-label">{technology.name}</span>
+        </div>
       ))}
-    </Row>
+    </div>
   );
 }
 

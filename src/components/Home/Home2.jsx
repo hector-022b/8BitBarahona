@@ -1,104 +1,115 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container } from "react-bootstrap";
+
 import myImg from "../../Assets/avatar.png";
-import Tilt from "react-parallax-tilt";
+
 import {
   AiFillGithub,
   AiOutlineTwitter,
 } from "react-icons/ai";
+
 import { FaLinkedinIn } from "react-icons/fa";
 
 function Home2() {
   return (
-    <Container fluid className="home-about-section" id="about">
+    <section className="home-about-section" id="about-preview">
       <Container>
-        <Row>
-          <Col md={8} className="home-about-description">
-            <h1 style={{ fontSize: "2.6em" }}>
-              A BRIEF <span className="purple"> INTRODUCTION </span>
-            </h1>
-            <p className="home-about-body">
-              I graduted from Tulane University SoPA with a 🎓 BS in
-              Information Technology with a Concentration in Integrated App Development
-              <br />
-              <br />I am currently focused on mastering
-              <i>
-                <b className="purple"> Python, JavaScript,  </b> and <b className="purple"> Modern JavaScript Libraries and Frameworks </b>
-               such as <b className="purple"> React.js and Next.js</b>
-              </i>
-              <br />
-              <br />
-              🌱 I am eager to continue learning and expanding my skillset. I am particularly interested
-              in exploring <b className="purple">emerging technologies</b> and industry <b className="purple">trends </b>
-              to stay at the forefront of the ever-evolving <b className="purple">tech world. </b>
-              <br />
-              <br />
-              🌟 Eager to improve my technical skills and problem-solving abilities, I am actively seeking full-time
-              employment and internships in <b className="purple">front-end development</b>. I am particularly excited
-              about exploring <b className="purple">mobile/web development</b>, <b className="purple">bot automation</b>,
-              and <b className="purple">AI</b>, where I see endless opportunities for innovation and growth.
-              <br />
-              <br />
-            </p>
-          </Col>
-          <Col md={4} className="myAvtar">
-            <Tilt>
-              <img src={myImg} className="img-fluid" alt="avatar" />
-            </Tilt>
-          </Col>
-        </Row>
-        <Row>
-          <Col md={12} className="home-about-social">
-            <h1>SOCIALS</h1>
+        <div className="home-about-grid">
+          <div className="home-about-copy">
+            <p className="home-about-eyebrow">A little about me</p>
+
+            <h2 className="home-about-title">
+              Building skills, solving problems, and
+              <span className="home-about-accent"> creating useful software.</span>
+            </h2>
+
+            <div className="home-about-body">
+              <p>
+                I&apos;m an Information Technology graduate from Tulane University
+                with a concentration in Integrated Application Development.
+              </p>
+
+              <p>
+                My current focus is strengthening my skills in
+                <strong className="home-about-accent">
+                  {" "}JavaScript, React, Python, and modern web development
+                </strong>
+                , while continuing to explore automation and emerging technologies.
+              </p>
+
+              <p>
+                I enjoy learning through hands-on projects, improving existing
+                systems, and turning ideas into applications that are useful,
+                reliable, and easy to understand.
+              </p>
+            </div>
+          </div>
+
+          <div className="home-about-visual">
+            <div className="about-image-frame">
+              <img
+                src={myImg}
+                className="about-image"
+                alt="Illustration representing Hector Barahona"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="home-social-panel">
+          <div className="home-social-copy">
+            <p className="home-about-eyebrow">Let&apos;s connect</p>
+
+            <h2 className="home-social-heading">
+              Find me around the web.
+            </h2>
+
             <p>
-              Feel free to <span className="purple">connect </span>with me
+              Check out my projects, professional background, or connect with me.
             </p>
-            <ul className="home-about-social-links">
-              <li className="social-icons">
-                <a
-                  href="https://github.com/hector-022b"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour  home-social-icons"
-                >
-                  <AiFillGithub />
-                </a>
-              </li>
-              <li className="social-icons">
-                <a
-                  href="https://x.com/hector_022b"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour  home-social-icons"
-                >
-                  <AiOutlineTwitter />
-                </a>
-              </li>
-              <li className="social-icons">
-                <a
-                  href="https://www.linkedin.com/in/hectorbarahona/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour  home-social-icons"
-                >
-                  <FaLinkedinIn />
-                </a>
-              </li>
-              <li className="social-icons">
-                {/*<a
-                  href="https://www.instagram.com/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour home-social-icons"
-                >
-                  <AiFillInstagram />
-                </a>*/}
-              </li>
-            </ul>
-          </Col>
-        </Row>
+          </div>
+
+          <ul className="home-about-social-links">
+            <li>
+              <a
+                href="https://github.com/hector-022b"
+                target="_blank"
+                rel="noreferrer"
+                className="home-social-icons"
+                aria-label="GitHub"
+              >
+                <AiFillGithub />
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="https://x.com/hector_022b"
+                target="_blank"
+                rel="noreferrer"
+                className="home-social-icons"
+                aria-label="X"
+              >
+                <AiOutlineTwitter />
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="https://www.linkedin.com/in/hectorbarahona/"
+                target="_blank"
+                rel="noreferrer"
+                className="home-social-icons"
+                aria-label="LinkedIn"
+              >
+                <FaLinkedinIn />
+              </a>
+            </li>
+          </ul>
+        </div>
       </Container>
-    </Container>
+    </section>
   );
 }
+
 export default Home2;
